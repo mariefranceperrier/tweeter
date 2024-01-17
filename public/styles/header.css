@@ -1,0 +1,21 @@
+header {
+  height: 620px;
+  width: 100%;
+  background-color: rgb(198, 139, 149);
+  background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+header img {
+  margin-top: 8em;   /* Add margin at the top for spacing */
+}
+
+
+
+
+
