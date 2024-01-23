@@ -47,7 +47,7 @@ textarea {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin: 30px 0;
+  margin: 60px 0;
   border: 5px solid #545149;
 }
 
@@ -62,8 +62,8 @@ article.tweet header {
   flex-direction:row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 60px;
-  height: 50%;
+  padding: 60px 60px 40px 60px;
+  height: 100%;
 }
 
 div.user-info {
@@ -74,8 +74,8 @@ div.user-info {
 }
 
 div.user-avatar img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-top: 1px;
   margin-right: 20px
@@ -83,10 +83,12 @@ div.user-avatar img {
 
 div.user-name {
   color: #545149;
+  font-size: 20px;
 }
 
 div.user-handle {
   color: #cac5b3;
+  font-size: 20px;
 }
 
 div.tweet-content {
@@ -96,17 +98,17 @@ div.tweet-content {
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  padding: 0 60px;
+  padding: 0 20px;
 }
 
 div.tweet-content p {
   width: 100%;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: #545149;
   border-bottom: 5px solid #545149;
-  padding-bottom: 30px;
-  margin-bottom: 10px;
+  padding: 0 50px 50px 50px;
+  margin-bottom: 2px;
 }
 
 article.tweet footer {
@@ -114,7 +116,7 @@ article.tweet footer {
   flex-direction:row;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 60px;
+  padding-inline: 70px;
 }
 
 div.tweet-date {
@@ -123,9 +125,9 @@ div.tweet-date {
 }
 
 div.tweet-actions {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 i:hover {
