@@ -9,10 +9,10 @@ header {
   align-items: center;
   flex-direction: column;
   position:relative;
-}
+} 
 
 header img {
-  margin-top: 8em;   /* Add margin at the top for spacing */
+  margin-top: 8em;   
 }
 
 
