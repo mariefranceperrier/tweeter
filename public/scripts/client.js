@@ -39,12 +39,12 @@ const createTweetElement = function (tweet) {
 }
 
 const renderTweets = function (tweets) {
-  const $tweetContainer = $('.tweet-container');
+  const $tweetContainer = $('#tweet-container');
   $tweetContainer.empty();
 
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $tweetContainer.append($tweet);
+    $tweetContainer.prepend($tweet);
   }
 }
 
@@ -70,23 +70,29 @@ $(function () {
           data: $(this).serialize()
         })
         .then(() => {
-          console.log('Success!');
+          loadTweets();
+          tweetText.val('');
         })
         .catch((err) => {
           console.log('Error:', err);
         });
+
+        const loadTweets = function () {
+          $.ajax({
+            url: '/tweets',
+            method: 'GET',
+            dataType: 'json'
+          })
+            .then((tweets) => {
+              renderTweets(tweets);
+            })
+            .catch((err) => {
+              console.log('Error:', err);
+            });
+        };
+
+        loadTweets();
+
       });
     });
     
-    const loadTweets = function () {
-      $.ajax({
-        url: '/tweets',
-        method: 'GET',
-        dataType: 'json',
-        success: (tweets) => {
-          renderTweets(tweets);
-        }
-      });
-    };
-
-    loadTweets();
