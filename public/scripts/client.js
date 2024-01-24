@@ -52,31 +52,41 @@ const renderTweets = function (tweets) {
 $(function () {
       $('.new-tweet form').on('submit', function (event) {
         event.preventDefault();
-        console.log('Button clicked, performing ajax call...');
         
-        const loadTweets = function () {
-          $.ajax({
-            url: '/tweets',
-            method: 'GET',
-            dataType: 'json',
-            success: (tweets) => {
-              renderTweets(tweets);
-            }
-          });
-        };
-
-        loadTweets();
-
+        const tweetText = $('#tweet-text');
+        const tweetTextLength = tweetText.val().length;
+        if (tweetTextLength === 0) {
+          alert('Please enter a tweet!');
+          return;
+        }
+        if (tweetTextLength > 140) {
+          alert('Your tweet is too long!');
+          return;
+        }
+        
         $.ajax({
           url: '/tweets',
           method: 'POST',
           data: $(this).serialize()
         })
-          .then(() => {
-            console.log('Success!');
-          })
-          .catch((err) => {
-            console.log('Error:', err);
-          });
+        .then(() => {
+          console.log('Success!');
+        })
+        .catch((err) => {
+          console.log('Error:', err);
+        });
       });
     });
+    
+    const loadTweets = function () {
+      $.ajax({
+        url: '/tweets',
+        method: 'GET',
+        dataType: 'json',
+        success: (tweets) => {
+          renderTweets(tweets);
+        }
+      });
+    };
+
+    loadTweets();
