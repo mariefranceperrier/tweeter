@@ -50,20 +50,31 @@ const renderTweets = function (tweets) {
 
 
 $(function () {
-      $('.new-tweet form').on('submit', function (event) {
-        event.preventDefault();
+  $('.new-tweet form').on('submit', function (event) {
+    event.preventDefault();
         
-        const tweetText = $('#tweet-text');
-        const tweetTextLength = tweetText.val().length;
-        if (tweetTextLength === 0) {
-          alert('Please enter a tweet!');
-          return;
-        }
-        if (tweetTextLength > 140) {
-          alert('Your tweet is too long!');
-          return;
-        }
+    const tweetText = $('#tweet-text');
+    const tweetTextLength = tweetText.val().length;
+    const $errorMessage = $('.error-message');
         
+    if (tweetTextLength === 0) {
+      $errorMessage.text('⚠️ Please enter a tweet ⚠️').slideDown('slow');
+      
+      setTimeout(function () {
+        $errorMessage.slideUp('slow');
+      }, 3000);
+      return;
+    }
+
+    if (tweetTextLength > 140) {
+      $errorMessage.text('⚠️ Your tweet is too long: MAX 140 characters ⚠️').slideDown('slow');
+      
+      setTimeout(function () {
+        $errorMessage.slideUp('slow');
+      }, 3000);
+      return;
+    }
+
         $.ajax({
           url: '/tweets',
           method: 'POST',
@@ -76,7 +87,7 @@ $(function () {
         .catch((err) => {
           console.log('Error:', err);
         });
-
+        
         const loadTweets = function () {
           $.ajax({
             url: '/tweets',
@@ -89,9 +100,9 @@ $(function () {
             .catch((err) => {
               console.log('Error:', err);
             });
-        };
-
-        loadTweets();
+          };
+          
+          loadTweets();
 
       });
     });
