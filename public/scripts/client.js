@@ -21,7 +21,7 @@ const createTweetElement = function (tweet) {
         </div>
       </header>
       <div class="tweet-content">
-        <p>${tweet.content.text}</p>
+        <p>${$('<div>').text(tweet.content.text).html()}</p>
       </div>
       <footer>
         <div class="tweet-date">
