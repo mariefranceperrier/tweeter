@@ -7,6 +7,10 @@ form {
   width:100%;
 }
 
+.container {
+  margin-top: 30px;
+}
+
 #tweet-container {
   width:100%
 }
@@ -61,7 +65,7 @@ textarea {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin: 60px 0;
+  margin: 50px 0;
   border: 5px solid #545149;
 }
 
@@ -76,7 +80,7 @@ article.tweet header {
   flex-direction:row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 60px 60px 40px 60px;
+  padding: 20px 30px 20px 30px;
   height: 100%;
 }
 
@@ -88,16 +92,15 @@ div.user-info {
 }
 
 div.user-avatar img {
-  width: 100px;
-  height: 100px;
-  /* border-radius: 90%; */
-  margin-top: 1px;
+  width: 2em;
+  height: 2em;
+  margin-top: 0.5em;
   margin-right: 20px
 }
 
 div.user-name {
   color: #545149;
-  font-size: 20px;
+  font-size: 0.8em;
 }
 
 div.user-handle {
@@ -117,12 +120,12 @@ div.tweet-content {
 
 div.tweet-content p {
   width: 100%;
-  font-size: 28px;
+  font-size: 0.8em;
   font-weight: bold;
   color: #545149;
   border-bottom: 5px solid #545149;
-  padding: 0 50px 50px 50px;
-  margin-bottom: 2px;
+  padding: 0 20px 30px 20px;
+  margin: 0px;
 }
 
 article.tweet footer {
@@ -138,6 +141,10 @@ div.tweet-date {
   font-size: 18px;
 }
 
+h4{
+  margin: 0.6em 0 0.9em 0;
+}
+
 div.tweet-actions {
   font-size: 18px;
   display: flex;
@@ -146,4 +153,36 @@ div.tweet-actions {
 
 i:hover {
   color: rgb(201, 164, 170);
+}
+
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    background-color: rgb(201, 164, 170);
+    background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
+  }
+} 
+
+@media only screen and (min-width: 1024px) {
+  header {
+    width: 35%;
+    height: 35%;
+    float: left;
+    margin: 8em 0 5em 2em;
+  }
+
+  header img {
+    margin-top: 2em;
+  }
+
+  .container {
+    width: 50%;
+    float: right;
+    margin: 8em 2em 5em 0;
+  }
+
+  article.tweet header {
+    margin: 0px;
+    width: 100%;
+  }
 }
