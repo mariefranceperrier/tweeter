@@ -1,9 +1,10 @@
 header {
-  height: 620px;
+  height: 520px;
   width: 100%;
   background-color: rgb(201, 164, 170);
   background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
   color: #FFFFFF;
+  font-family: "Source Sans 3", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,9 +12,12 @@ header {
 } 
 
 header img {
-  margin-top: 8em;   
+  margin-top: 5em;   
 }
 
+header span {
+  font-size: 1.5em;
+}
 
 
 
