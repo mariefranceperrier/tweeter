@@ -154,7 +154,7 @@ div.tweet-actions {
   gap: 20px;
 }
 
-i:hover {
+footer i:hover {
   color: rgb(201, 164, 170);
 }
 
