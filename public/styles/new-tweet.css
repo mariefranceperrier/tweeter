@@ -11,10 +11,6 @@ form {
   margin-top: 30px;
 }
 
-#tweet-container {
-  width:100%
-}
-
 label {
   font-weight: 600;
   font-size: 30px;
@@ -30,7 +26,7 @@ textarea {
   background-color: #f4f1ec;
   border-bottom: 5px solid #545149;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
 } 
 
 .tweet-submit {
@@ -38,7 +34,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-family: "Bungee";
+  font-family: "Bungee", sans-serif;
 }
 
 .tweet-submit button {
@@ -58,6 +54,10 @@ textarea {
   margin-top: 20px;
   padding: 10px;
   border: 5px dotted red;
+}
+
+#tweet-container {
+  width: 100%;
 }
 
 .tweet {
@@ -94,25 +94,28 @@ div.user-info {
 div.user-avatar img {
   width: 2em;
   height: 2em;
-  margin-top: 0.5em;
+  margin-top: 0px;
   margin-right: 20px
 }
 
 div.user-name {
   color: #545149;
-  font-size: 0.8em;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 14px;
 }
 
-div.user-handle {
+div.user-handle { 
   color: #cac5b3;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 14px;
 }
 
 div.tweet-content {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  word-break: break-all;
   width: 100%;
   height: 100%;
   padding: 0 20px;
@@ -120,8 +123,8 @@ div.tweet-content {
 
 div.tweet-content p {
   width: 100%;
-  font-size: 0.8em;
-  font-weight: bold;
+  font-size: 1.1em;
+  font-weight: 600;
   color: #545149;
   border-bottom: 5px solid #545149;
   padding: 0 20px 30px 20px;
