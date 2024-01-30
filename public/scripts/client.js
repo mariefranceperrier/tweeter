@@ -13,11 +13,11 @@ const createTweetElement = function (tweet) {
             <img src="${tweet.user.avatars}" alt="user avatar">
           </div>
           <div class="user-name">
-            <h3>${tweet.user.name}</h3>
+            <span>${tweet.user.name}</span>
           </div>
         </div>
         <div class="user-handle">  
-          <h3>${tweet.user.handle}</h3>
+          <span>${tweet.user.handle}</span>
         </div>
       </header>
       <div class="tweet-content">
@@ -48,8 +48,25 @@ const renderTweets = function (tweets) {
   }
 }
 
+const loadTweets = function () {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    dataType: 'json'
+  })
+    .then((tweets) => {
+      renderTweets(tweets);
+    })
+    .catch((err) => {
+      console.log('Error:', err);
+    });
+};
 
-$(function () {
+$(document).ready(function () {
+  loadTweets();
+});
+
+$(document).ready(function () {
   $('.new-tweet form').on('submit', function (event) {
     event.preventDefault();
         
@@ -75,35 +92,19 @@ $(function () {
       return;
     }
 
-        $.ajax({
-          url: '/tweets',
-          method: 'POST',
-          data: $(this).serialize()
-        })
-        .then(() => {
-          loadTweets();
-          tweetText.val('');
-        })
-        .catch((err) => {
-          console.log('Error:', err);
-        });
-        
-        const loadTweets = function () {
-          $.ajax({
-            url: '/tweets',
-            method: 'GET',
-            dataType: 'json'
-          })
-            .then((tweets) => {
-              renderTweets(tweets);
-            })
-            .catch((err) => {
-              console.log('Error:', err);
-            });
-          };
-          
-          loadTweets();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize()
+    })
+    .then(() => {
+      loadTweets();
+      tweetText.val('');
+    })
+    .catch((err) => {
+      console.log('Error:', err);
+    })
+  });
+});
 
-      });
-    });
     
