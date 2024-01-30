@@ -97,12 +97,17 @@ $(document).ready(function () {
       method: 'POST',
       data: $(this).serialize()
     })
-    .then(() => {
-      loadTweets();
-      tweetText.val('');
+      .then(() => {
+        // Reset the counter and color
+        const $counter = tweetText.parent().find(".counter");
+        $counter.text(140);
+        $counter.css('color', '#545149');
+        // Load the tweets
+        loadTweets();
+        tweetText.val('');
     })
-    .catch((err) => {
-      console.log('Error:', err);
+      .catch((err) => {
+        console.log('Error:', err);
     })
   });
 });
