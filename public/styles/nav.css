@@ -12,16 +12,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
 }
 
 .nav-bar .left-side {
   display: flex;
   align-items: center;
-}
-
-.nav-bar .left-side span {
-  font-family:'Bungee', sans-serif;
+  font-family: 'Bungee', sans-serif;
   font-size: 1.5em;
 }
 
