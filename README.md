@@ -14,5 +14,20 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
 - Node 5.10.x or above
+- express
+- body-parser
+- chance
+
+## Features
+
+- Single-page application
+- Utilizes HTML, CSS, JS, jQuery and AJAX for the front-end
+- Node.js and Express for the back-end
+- Random profile picture and username generation with the 'chance' library to simulate real-world Twitter interactions 
+
+## Screenshots
+
+!["Screenshot of view from tablet screen size"](https://github.com/mariefranceperrier/tweeter/blob/master/docs/tablet-screen.png.png?raw=true)
+!["Screenshot of view from deskot screen size"](https://github.com/mariefranceperrier/tweeter/blob/master/docs/desktop-%20screen.png.png?raw=true)
+!["Screenshot of chronological tweets in tweet box"](https://github.com/mariefranceperrier/tweeter/blob/master/docs/tweet-box.png.png?raw=true)
