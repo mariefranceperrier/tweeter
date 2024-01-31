@@ -8,24 +8,24 @@ form {
 }
 
 .container {
-  margin-top: 30px;
+  margin-top: 1.2em;
 }
 
 label {
+  font-size: 1.1em;
   font-weight: 600;
-  font-size: 30px;
   color: #545149;
-  margin-bottom: 8px;
+  margin-bottom: 0.3em;
 }
 
 textarea {
   width: 100%;
-  height: 43px;
+  height: 2.9rem;
   margin-bottom: 10px;
   border: none; 
   background-color: #f4f1ec;
   border-bottom: 5px solid #545149;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 } 
 
@@ -49,7 +49,7 @@ textarea {
 .error-message{
   display: none;
   color: red;
-  font-size: 24px;
+  font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
   padding: 10px;
@@ -100,14 +100,14 @@ div.user-avatar img {
 
 div.user-name {
   color: #545149;
-  font-size: 16px;
+  font-size: 0.6em;
   font-weight: 300;
   margin-top: 14px;
 }
 
 div.user-handle { 
   color: #cac5b3;
-  font-size: 16px;
+  font-size: 0.6em;
   font-weight: 600;
   margin-top: 14px;
 }
@@ -136,12 +136,12 @@ article.tweet footer {
   flex-direction:row;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 70px;
+  padding-inline: 2.5rem;
 }
 
 div.tweet-date {
   color: #545149;
-  font-size: 18px;
+  font-size: 0.6em;
 }
 
 h4{
@@ -149,9 +149,9 @@ h4{
 }
 
 div.tweet-actions {
-  font-size: 18px;
+  font-size: 0.6em;
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 footer i:hover {
@@ -164,7 +164,7 @@ footer i:hover {
     background-color: rgb(201, 164, 170);
     background-image: url("https://www.transparenttextures.com/patterns/triangles.png");
   }
-} 
+}
 
 @media only screen and (min-width: 1024px) {
   header {
