@@ -29,5 +29,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["Screenshot of view from tablet screen size"](https://github.com/mariefranceperrier/tweeter/blob/master/docs/tablet-screen.png?raw=true)
+
 !["Screenshot of view from deskot screen size"](https://github.com/mariefranceperrier/tweeter/blob/master/docs/desktop-screen.png?raw=true)
+
 !["Screenshot of chronological tweets in tweet box"](https://github.com/mariefranceperrier/tweeter/blob/master/docs/tweet-interactions.png?raw=true)
