@@ -73,43 +73,35 @@ $(document).ready(function () {
     const tweetText = $('#tweet-text');
     const tweetTextLength = tweetText.val().length;
     const $errorMessage = $('.error-message');
-        
+    
+    // Slide up the error message before validation
+    $errorMessage.slideUp('slow');
+
     if (tweetTextLength === 0) {
       $errorMessage.text('⚠️ Please enter a tweet ⚠️').slideDown('slow');
-      
-      setTimeout(function () {
-        $errorMessage.slideUp('slow');
-      }, 3000);
       return;
     }
-
     if (tweetTextLength > 140) {
       $errorMessage.text('⚠️ Your tweet is too long: MAX 140 characters ⚠️').slideDown('slow');
-      
-      setTimeout(function () {
-        $errorMessage.slideUp('slow');
-      }, 3000);
       return;
     }
-
+    
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $(this).serialize()
     })
       .then(() => {
-        // Reset the counter and color
+        // Load the tweets and empty the input field
+        loadTweets();
+        tweetText.val('');
+        // Reset counter character and counter color
         const $counter = tweetText.parent().find(".counter");
         $counter.text(140);
         $counter.css('color', '#545149');
-        // Load the tweets
-        loadTweets();
-        tweetText.val('');
     })
       .catch((err) => {
         console.log('Error:', err);
     })
   });
 });
-
-    
